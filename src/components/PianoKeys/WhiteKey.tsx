@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { useGlobalContext } from '../../hooks/useGlobalContext'
 import { KeyInfoSound } from '../../types/KeyInfoSound'
-import { StateKey } from '../../types/StateKey'
+import { StateKey } from '../../types/enums/StateKey'
 import { getRandomIndex } from '../../utils/getRandomIndex'
+import { useGuessNoteContext } from '../../hooks/useGuessNoteContext'
 
 export const WhiteKey = ({ data }: { data: KeyInfoSound }) => {
+  const { setCorrect, correct, setIncorrect, incorrect } = useGuessNoteContext()
   const { globalNote, setGlobalNote, keySheetMusicUsed } = useGlobalContext()
   const [isCorrect, setIsCorrect] = useState(StateKey.NONE)
 
@@ -13,14 +15,16 @@ export const WhiteKey = ({ data }: { data: KeyInfoSound }) => {
     if (globalNote.name[0] === data.name[0]) {
       const audio = new Audio(data.sound)
       audio.play()
-      
+
       setIsCorrect(StateKey.CORRECT)
+      setCorrect(correct + 1)
       let newNote = keySheetMusicUsed[getRandomIndex(18)]
       while (newNote.number === globalNote.number) {
         newNote = keySheetMusicUsed[getRandomIndex(18)]
       }
       setGlobalNote(keySheetMusicUsed[getRandomIndex(18)])
     } else {
+      setIncorrect(incorrect + 1)
       setIsCorrect(StateKey.INCORRECT)
     }
   }

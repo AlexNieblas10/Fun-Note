@@ -1,4 +1,4 @@
-import { WidthSize } from '../../types/WidthSize'
+import { WidthSize } from '../../types/enums/WidthSize'
 import { Note } from './Note'
 
 export const Line = ({

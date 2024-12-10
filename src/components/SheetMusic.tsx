@@ -4,7 +4,7 @@ import { Space } from './SheetMusicComponents/Space'
 import { checkWidth } from '../utils/checkWidth'
 import gKey from '../assets/gKey.png'
 import fKey from '../assets/fKey.png'
-import { KeySheet } from '../types/KeySheet'
+import { KeySheet } from '../types/enums/KeySheet'
 
 export const SheetMusic = () => {
   const { globalNote, keySheetMusicUsed, keySheet } = useGlobalContext()
