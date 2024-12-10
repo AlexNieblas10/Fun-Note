@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { GlobalContext } from './GlobalContext'
 import { gKeySheetMusic } from '../utils/gKeySheetMusic'
 import { getRandomIndex } from '../utils/getRandomIndex'
-import { KeySheet } from '../types/KeySheet'
+import { KeySheet } from '../types/enums/KeySheet'
 import { fKeySheetMusic } from '../utils/fKeySheetMusic'
 
 export const GlobalProvider = ({
