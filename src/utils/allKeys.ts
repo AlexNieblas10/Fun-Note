@@ -1,4 +1,4 @@
-import { KeyInfo } from '../types/KeyInfo'
+import { KeyInfo } from "../types/KeyInfo";
 
 export const allKeys: KeyInfo[] = [
   { name: ['C'], nameInKeyboard: ['C1'], isBlackKey: false, number: 1 },

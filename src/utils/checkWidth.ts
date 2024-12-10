@@ -1,5 +1,5 @@
 import { KeyInfo } from '../types/KeyInfo'
-import { WidthSize } from '../types/WidthSize'
+import { WidthSize } from '../types/enums/WidthSize'
 
 export function checkWidth(noteKey: KeyInfo, globalNote: KeyInfo): WidthSize {
   if (noteKey.number >= 6 && noteKey.number <= 14) {
