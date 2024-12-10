@@ -1,7 +1,8 @@
-import { KeyInfo } from './KeyInfo'
-import { KeySheet } from './KeySheet'
+import { KeySheet } from "../enums/KeySheet"
+import { KeyInfo } from "../KeyInfo"
 
-export interface Context {
+
+export interface GlobalContextType {
   globalNote: KeyInfo
   setGlobalNote: React.Dispatch<React.SetStateAction<KeyInfo>>
   keySheet: KeySheet
